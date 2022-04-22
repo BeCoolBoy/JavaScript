@@ -1,0 +1,29 @@
+<!-- <script>
+    let f = function(){
+        let a=10;
+        let b=20;
+        return ()=>{
+            console.log(a) // closures
+            console.log(b) // closures
+        }
+    } 
+    console.dir(f())
+</script> -->
+
+<!-- <script>
+    for(let i=0;i<=4;i++){
+        const f = function(){
+            console.log(i)
+        }
+        f()
+    }
+</script> -->
+
+<script>
+    for(let i=0;i<=4;i++){
+        setTimeout(()=>{
+            console.log(i)
+        },1000)
+    }
+    console.log('After setTimeOut')
+</script>

@@ -1,0 +1,22 @@
+<!-- <script>
+    for(var i=0;i<=4;i++){ //here var is a functional scope... it wont create new variable .. it will add new value in the same variable
+        setTimeout(()=>{
+            console.log(i)
+        },1000)
+    }
+    console.log('After setTimeOut')
+</script> -->
+
+<!-- // How we can finx the functional scope varial to block scope variable
+// for that we need to create immediate invoke functional
+//((i)=>{})(i) // synctax -->
+<script>
+    for(var i=0;i<=4;i++){ 
+        ((i)=>{
+            setTimeout(()=>{
+                console.log(i)
+            },1000)
+        })(i);
+    }
+    console.log('After setTimeOut')
+</script>

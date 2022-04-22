@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="row mt-5">
+        <div class="col-md-4 m-auto">
+            <form method="post" id="form">
+                <div id="error-message" class="text-danger"></div>
+                <input type="text" id="name" class="form-control" placeholder="User Name"/><br>
+                <input type="password" id="password" class="form-control"  placeholder="Password"/><br>
+                <input type="submit" value="Submit" class="form-control bg-success text-white" />
+                <div id="success-message" class="text-success"></div>
+            </form>
+        </div>
+    </div>
+    <!-- JS -->
+    <!-- <script>
+        var form=document.getElementById('form');
+        var error = [];
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var password = document.getElementById('password').value;
+            if(name==''){
+                error.push('Please enter username')
+            }
+            if(password==''){
+                error.push('Please enter Password')
+            }
+            document.getElementById('error-message').innerText=error;
+            document.getElementById('success-message').innerText='Form is success fully submitted';
+            console.log(name, password)
+        })
+    </script> -->
+
+    <script>
+        var form=document.getElementById('form');
+        var error = [];
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var password = document.getElementById('password').value;
+            if(name==''){
+                error.push('Please enter username')
+            }else if(password==''){
+                error.push('Please enter Password')
+            }else if(password.match(/^[2-9]\d{2}[2-9]\d{2}\d{4}$/)){
+                error.push('Do correct')
+            }else{
+                document.getElementById('success-message').innerText='Form is success fully submitted';
+            }
+            document.getElementById('error-message').innerText=error;
+        })
+    </script>
+</body>
+</html>
